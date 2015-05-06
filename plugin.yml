@@ -1,0 +1,5 @@
+name: begmac
+version: 0.22
+main: beg.m.ac.BEGMAC
+authors: [makko]
+description: Bouncing Egg Minecraft Achievements

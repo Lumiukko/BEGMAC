@@ -156,7 +156,7 @@ public class BEGMAC extends JavaPlugin {
 	public void onDisable() {
 		//TODO: call persisters run method one more time before disabling
 		print("DISTABLE SIGNAL ", "Attempting to shutdown....");
-		Player[] playerList = getServer().getOnlinePlayers();
+		Collection<? extends Player> playerList = getServer().getOnlinePlayers();
 		for (Player p : playerList) {
 			listener.savePlayerTime(p);
 		}

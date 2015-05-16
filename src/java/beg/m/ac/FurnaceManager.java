@@ -1,11 +1,12 @@
 package beg.m.ac;
 
-import java.util.*;
-import net.minecraft.server.Material;
-import org.bukkit.Location;
 import org.bukkit.inventory.FurnaceInventory;
 import org.bukkit.inventory.ItemStack;
-import sun.swing.AccumulativeRunnable;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *

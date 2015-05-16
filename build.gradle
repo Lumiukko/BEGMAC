@@ -1,0 +1,31 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/groups/public/'
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/java'
+        }
+        resources {
+            srcDir 'src/resources'
+        }
+    }
+}
+
+dependencies {
+    compile ('org.spigotmc:spigot-api:1.8.3-R0.1-SNAPSHOT') {
+        //Only the spigot api itself and not the dependencies for the api
+        transitive = false
+    }
+    compile 'mysql:mysql-connector-java:5.1.35'
+    compile 'org.xerial:sqlite-jdbc:3.8.10.1'
+}

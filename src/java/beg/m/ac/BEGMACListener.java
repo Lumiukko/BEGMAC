@@ -390,33 +390,16 @@ public class BEGMACListener implements Listener {
 		BEGMAC.addAction(new Action(player.getName(), "ITEM_BREAK_" + itemStack.getType(), 1));
 	}
 
-	/* TODO: Eating stuff as an action chain:
-	 *  - change hand to something eatable
-	 *  - right click action
-	 *  - right click action finished (!)
-	 */
-	/*
 	@EventHandler
-	public void interact(PlayerItemHeldEvent event) {
-		Material hand = event.getPlayer().getItemInHand().getType();
-		if (hand.isEdible()) {
-			// Item is eatable...
-			// add interaction to a map/list
-		}
+	public void consumeFood(PlayerItemConsumeEvent event) {
+		Player player = event.getPlayer();
+		ItemStack consumedItem = event.getItem();
+
+		if (isCheating((player))) return;
+
+		BEGMAC.addAction(new Action(player.getName(), "CONSUME_" + consumedItem.getType(), consumedItem.getAmount()));
 	}
-	
-	
-	@EventHandler
-	public void onFoodLevelChange(FoodLevelChangeEvent event) {
-		if (event.getEntity() instanceof Player) {
-			// check if in the map/list there is a fitting interaction
-			// if yes: known item has been eaten
-			// if no: unknown item has been eaten
-		}
-	}
-	* 
-	*/
-	
+
 	
 	/* TODO: Furnace Crafting as an action chain:
 	 *  - put something in the oven (oven ID)

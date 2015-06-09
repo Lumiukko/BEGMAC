@@ -1,0 +1,6 @@
+#default configuration for BEGMAC
+database:
+ adapter: sqlite
+ url: ./begmac.sql
+ username:
+ password:
